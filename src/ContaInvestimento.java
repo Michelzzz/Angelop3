@@ -9,7 +9,7 @@ public class ContaInvestimento extends Conta{
     protected int prazo;
     boolean sacar(double valor) {
         if (this.taxa >= valor) {
-            this.taxa -= valor;
+            this.saldo -= (valor * 1.01);
             return true;
         } else {
             return false;
@@ -17,7 +17,7 @@ public class ContaInvestimento extends Conta{
     }
     boolean depositar(double valor) {
         if (this.taxa >= 0) {
-            this.taxa += valor;
+            this.saldo += (valor * 1.01);
             return true;
         } else {
             return false;
@@ -25,7 +25,7 @@ public class ContaInvestimento extends Conta{
     }
     boolean aplicaRendimento(double taxa) {
         if (this.taxa >= 0) {
-            this.taxa *= taxa;
+            this.saldo *= (taxa * 1);
             return true;
         }   else {
             return false;
